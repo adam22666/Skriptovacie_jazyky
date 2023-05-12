@@ -3,4 +3,5 @@
  require_once('Menu.php');
  require_once('User.php'); 
  require_once('Page.php'); 
+ require_once('Services.php');
 ?>

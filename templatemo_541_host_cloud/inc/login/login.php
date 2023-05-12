@@ -30,11 +30,11 @@
                         //print_r($_SESSION);
                         header("Location: ../../admin.php");
                     }else{
-                        echo 'Nesprávne heslo';
+                        echo 'Wrong password';
                     }
             }
             }else{
-                echo 'pouzivatel neexistuje';
+                echo 'User doesnt exist!';
             }
     }
 

@@ -9,7 +9,7 @@
             return $this->menu;
         }
     }
-    $Header_menu = new Menu(array("Domov"=>"index.php",
+    $Header_menu = new Menu(array("Home"=>"index.php",
                                   "About Us"=>"about.php",
                                   "Our Services"=>"services.php",
                                   "Contact Us"=>"contact.php",
@@ -18,7 +18,7 @@
     function print_menu($menu){
         $menu_items = $menu->get_menu();
         foreach($menu_items as $page=>$url){
-            echo '<li><a href="'.$url.'">'.$page.'</a></li>';
+            echo '<li class="nav-item"><a class="nav-link" href="'.$url.'">'.$page.'</a></li>';
         }
     }
     

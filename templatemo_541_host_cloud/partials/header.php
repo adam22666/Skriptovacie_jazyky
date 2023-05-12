@@ -50,10 +50,10 @@ https://templatemo.com/tm-541-host-cloud
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto"> 
             <?php
-        print_menu($Header_menu);
-       ?> 
+        print_menu ($Header_menu);
+       ?>
             </ul>
           </div>
         </div>

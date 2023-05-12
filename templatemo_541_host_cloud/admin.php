@@ -16,29 +16,42 @@
 </head>
 <body class="container">
     <section>
-        <h1>Admin rozhranie</h1>
-        <p>Vítaj admin <?php echo($_SESSION['user_name'][0]->user_name);?></p><br>
-        <a href="inc/login/logout.php">Odhlásiť sa</a>
+        <h1>Admin interface</h1>
+        <p>Welcome! <?php echo($_SESSION['user_name'][0]->user_name);?></p><br>
+        <a href="inc/login/logout.php">Log out</a>
     </section>
     <section>
-        <h2>Portfólio</h2>
-        <form action="inc/portfolio/insert.php" method="post">
-            <input type="text" name="name" id="name" placeholder="Názov portfólia">
-            <input type="text" name="image" id="image" placeholder="Cesta k obrázku">
-            <input type="submit" value="Pridať" name="add_portfolio">
+        <h2>Services</h2>
+        <form action="inc/service/insert.php" method="post">
+            <input type="text" name="name" placeholder="The name of the service">
+            <input type="text" name="description"placeholder="The description of the service">
+            <input type="text" name="image"placeholder="Image path">
+            <input type="submit" value="Add" name="add_services">
         </form>
         <?php
-            $portfolio = $Portfolio->get_portfolio();
+            $services = $Services->get_service();
+            
             echo '<table class="admin-table">';
-                foreach($portfolio as $p){
+                foreach($services as $s){
                     echo '<tr>';
-                    echo '<td>'.$p->name;'</td>';
-                    echo '<td>'.'<img width="150" src = "'.$p->image.'">';
-                    echo '<td><button class="edit">Editovať</button>';
+                    echo '<td>'.$s->name;'</td>';
+                    echo '<td>'.$s->description;'</td>';
+                    echo '<td>'.$s->image;'</td>';
                     echo '<td>
-                            <form action="inc/portfolio//delete.php" method="post">
-                                <button type = "submit" name="delete_portfolio" value="'.$p->id.'"'.'>Vymazať</button>
+                            <form action="inc/service/delete.php" method="post">
+                                <button type = "submit" name="delete_services" value="'.$s->id.'"'.'>Delete</button>
                             </form>';
+                    echo '</tr>';
+                    echo '<tr>';
+                    echo '<td colspan="4">
+                            <form action="inc/service/update.php" method="post">
+                                <input type="hidden" name="form_id" value="'.$s->id.'"'.'>
+                                <input type ="text" name="update_name" placeholder="New name"><br>
+                                <input type ="text" name="update_description" placeholder = "New description"><br>
+                                <input type ="text" name="update_image" placeholder = "New image"><br>
+                                <input type ="submit" name="update_services" value="Save changes">
+                            </form>
+                        </td>'; 
                     echo '</tr>';
                 }
                 echo '</table>';
