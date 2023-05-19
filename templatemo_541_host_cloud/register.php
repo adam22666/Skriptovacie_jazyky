@@ -11,7 +11,8 @@
           <form action="inc/register/insert.php" method="post">
             <input type="text" name="user_name" placeholder="name"><br><br>
             <input type="email" name="user_email" placeholder="email"><br><br>
-            <input type="password" name="user_password" placeholder="password">
+            <input type="password" name="user_password" placeholder="password"><br><br>
+            <input type="password" name="user_password1" placeholder="password">
             <br>
             <br>
             <input type="submit" value="Sign up" name="add_user">
