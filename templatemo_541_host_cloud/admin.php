@@ -2,7 +2,7 @@
     require('inc/config.php');
     session_start();
     if(!isset($_SESSION['user_name'])){
-        header("Location:no-permission.php");
+        header("Location:nopermission.php");
     }
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 <body class="container">
     <section>
         <h1>Admin interface</h1>
-        <p>Welcome! <?php echo($_SESSION['user_name'][0]->user_name);?></p><br>
+        <p>Welcome user <?php echo($_SESSION['user_name'][0] -> user_name);?></p><br>
         <a href="inc/login/logout.php">Log out</a>
     </section>
     <section>
@@ -30,7 +30,6 @@
         </form>
         <?php
             $services = $Services->get_service();
-            
             echo '<table class="admin-table">';
                 foreach($services as $s){
                     echo '<tr>';

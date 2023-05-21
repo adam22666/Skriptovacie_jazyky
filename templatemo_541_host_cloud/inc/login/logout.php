@@ -7,6 +7,4 @@
      echo '<br>';
      echo  '<a href="../../index.php"> <div class="header-text caption">
      <h2>BACK TO MAIN PAGE</h2></a></div>';
-    //session_destroy(); 
-    //header('URL = index.php');
 ?>

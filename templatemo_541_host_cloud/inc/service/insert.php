@@ -2,7 +2,7 @@
 require('../Database.php');
 $db =  new Database();
 if(isset($_POST['add_services'])){
-    print_r("T");
+    print_r("The service has been added!");
     $data = [
         'name' => $_POST["name"],
         'description' => $_POST["description"],
@@ -16,6 +16,6 @@ if(isset($_POST['add_services'])){
         print_r($e->getMessage());
     }   
 }else{
-    print_r("F");
+    print_r("xxxxxxxxxxx");
 }
 ?>
